@@ -72,3 +72,30 @@ function initScene() {
     })
   }
 
+  AFRAME.registerComponent('shootable', {
+    init: function () {
+        this.el.addEventListener('click', () => {
+            // Increment the score
+            score++;
+            document.querySelector('[text]').setAttribute('value', `${score} meteoritos cazados`);
+
+            // Remove the meteor from the scene
+            this.el.parentNode.removeChild(this.el);
+
+            // Store the updated score in LocalStorage
+            localStorage.setItem('score', score);
+        });
+    },
+});
+
+// guardarlo en el local storage
+window.addEventListener('load', () => {
+    const savedScore = localStorage.getItem('score');
+    if (savedScore !== null) {
+        score = parseInt(savedScore);
+        document.querySelector('[text]').setAttribute('value', `${score} meteoritos cazados`);
+    }
+
+    initScene();
+});
+
