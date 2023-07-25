@@ -1,5 +1,4 @@
 
-
 window.addEventListener('load', initScene)
 
 const naves = [
@@ -40,16 +39,56 @@ let navee, score = 0
 //     })
 // }
 
+window.addEventListener('load', initScene)
+
+const naves = [
+    { x: 0, y: 0, z: -60 },
+    { x: 0, y: 0, z: 60 },
+    { x: 20, y: 0, z: 0 },
+    { x: -20, y: 0, z: 0 },
+    { x: 10, y: 0, z: 40 },
+    { x: 10, y: 0, z: -40 },
+    { x: -10, y: 0, z: -40 },
+    { x: -10, y: 0, z: 40 }
+]
+
+let meteor, score = 0
+
+function initScene() {
+
+    let orbits = document.querySelectorAll('.orbit')
+
+    orbits.forEach(orbit => {
+
+        meteors.forEach(pos => {
+
+            meteor = document.createElement('a-entity')
+            meteor.setAttribute('geometry', { primitive: 'sphere', radius: Math.random() * 3 + 0.5 })
+            meteor.setAttribute('material', { shader: 'flat', src: '#meteor' })
+            meteor.setAttribute('class', 'meteor')
+            meteor.object3D.position.set(pos.x, pos.y, pos.z)
+
+//             navee.setAttribute('shootable', '')
+
+//             orbit.appendChild(navee)
+//         })
+//     })
+// }
+
+//funcion de disparar nave
 AFRAME.registerComponent('shootable', {
     init: function () {
         this.el.addEventListener('click', () => {
             this.el.parentNode.removeChild(this.el)
-            document.querySelector('[text]').setAttribute('value', `${++score} naves eliminadas`)
+            document.querySelector('[text]').setAttribute('value', `${++score} meteoritos cazados`)
         })
     }
-})
+
+    initScene();
+});
 
 
+// meter el objeto del nave
 function initScene() {
     let orbits = document.querySelectorAll('.orbit')
   
