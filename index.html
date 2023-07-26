@@ -81,7 +81,7 @@
         <!-- camera-->
     <a-camera camera="" look-controls="" position="10 10 -5"  data-aframe-inspector-original-camera="">
 
-        <a-text value="0 naves eliminadas" text-shadow="1 1 1 black" color="white" position="0 -0.70 -1" width="1" align="center" text="">
+        <a-text value="0 naves eliminadas" text-shadow="1 1 1 black" color="white" position="0 -0.70 -1" width="1" text-align="center" text="">
         </a-text>
         <a-entity cursor="fuse: true; fuseTimeout: 100" position="0 0 -2" raycaster="objects: .meteor" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat">
         </a-entity>
@@ -91,7 +91,7 @@
        
 <!-- storage -->
           
-        <a-text value="0 naves eliminadas" text-shadow="2px 2px 2px black" color="white" position="0 -0.1 -1" width="1" align="center">
+        <a-text value="0 naves eliminadas" text-shadow="2px 2px 2px black" color="white" position="0 -0.1 -1" width="1" text-align="center">
         </a-text>
 
        <a-entity cursor="fuse: true; fuseTimeout: 100" position="0 0 -1" raycaster="objects: .meteor"
@@ -101,7 +101,7 @@
 
                <!-- Mandos -->
                 <a-entity camera position="0 1.6 0" wasd-controls look-controls>
-                    <a-text position="0 0 -5"  wrap-count="50" align="center"></a-text>
+                    <a-text position="0 0 -5"  wrap-count="50" text-align="center"></a-text>
                   </a-entity>
                   <a-entity oculus-touch-controls="hand: left"
                             collider-check raycaster="objects: .collidable; showLine: true; far: 1"></a-entity>
@@ -114,10 +114,7 @@
             <a-plane position="-4 -10.10783 -4"  material="src: #miImagen; repeat: 1 1;" rotation="-90 0 0 " geometry="primitive: plane; width: 10000; height: 10000" ></a-plane>
         </a-entity>
 
-        <!-- <audio id="sound" sound="src: url(https://cdn.glitch.global/e576ce81-aaef-439c-852c-a07fddd0ab24/blaster-2-81267.mp3?v=1690295233292); on: click;"></audio> -->
 </a-scene>
 
-
 </body>
-
 </html>
