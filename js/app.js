@@ -55,8 +55,8 @@ function initScene() {
       meteors.forEach(pos => {
   
         meteor = document.createElement('a-entity')
-        meteor.setAttribute('gltf-model', 'https://cdn.glitch.global/ebd0de65-7a0c-4c3d-a550-d214da511d08/Turret%20Teleporter.glb?v=1690187026653') // Aquí usamos el glTF previamente cargado
-        meteor.setAttribute('material', { color: '#00FF00', antialias: 'true', }) 
+        meteor.setAttribute('gltf-model', 'https://cdn.glitch.global/ebd0de65-7a0c-4c3d-a550-d214da511d08/Turret%20Teleporter.glb?v=1690187026653') 
+        meteor.setAttribute('material', { color: '#00FF00', antialias: 'true', sound:"src: #sound; on: click" }) 
         meteor.setAttribute('class', 'meteor')
         meteor.object3D.position.set(pos.x, pos.y, pos.z)
 
