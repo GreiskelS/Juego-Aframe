@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portal 3D con Efectos Visuales</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <!-- Entorno de fondo -->
+    <a-sky color="#000"></a-sky>
+
+    <!-- Portal -->
+    <a-entity id="portal" position="0 0 -5">
+      <!-- Marco exterior -->
+      <a-circle position="0 0 -0.1" radius="3" color="#0a73c9" material="opacity: 0.6; side: double;" animation__open="property: scale; from: 0.01 0.01 1; to: 3 3 1; dur: 1500; startEvents: open" animation__close="property: scale; from: 3 3 1; to: 0.01 0.01 1; dur: 1500; startEvents: close"></a-circle>
+      <!-- Superficie interna -->
+      <a-circle position="0 0 0" radius="2.9" color="#0a73c9" material="opacity: 0.8; side: double;" animation__open="property: scale; from: 0.01 0.01 1; to: 2.9 2.9 1; dur: 1500; startEvents: open" animation__close="property: scale; from: 2.9 2.9 1; to: 0.01 0.01 1; dur: 1500; startEvents: close"></a-circle>
+      <!-- Efecto visual -->
+      <a-entity id="portalEffect" scale="0 0 0" particle-system="preset: portal; particleCount: 1000; size: 0.05; color: #0a73c9; maxAge: 1; spawnRate: 200" animation__open="property: scale; from: 0 0 0; to: 0.6 0.6 0.6; dur: 1500; startEvents: open" animation__close="property: scale; from: 0.6 0.6 0.6; to: 0 0 0; dur: 1500; startEvents: close"></a-entity>
+      <!-- Texto de Bienvenida -->
+      <a-text value="Bienvenido al Portal" color="white" align="center" position="0 0 0.1" scale="0.3 0.3 0.3"></a-text>
+    </a-entity>
+
+    <!-- Cámara -->
+    <a-camera position="0 1.6 0"></a-camera>
+  </a-scene>
+
+  <script>
+    // Abre el portal al hacer clic en la escena
+    document.querySelector('a-scene').addEventListener('click', function () {
+      var portal = document.getElementById('portal');
+      var portalEffect = document.getElementById('portalEffect');
+
+      portal.emit('open');
+      portalEffect.emit('open');
+
+      // Cierra el portal después de 2 segundos
+      setTimeout(function () {
+        portal.emit('close');
+        portalEffect.emit('close');
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
