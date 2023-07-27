@@ -20,14 +20,15 @@
         info-message="htmlSrc: #messageText">
         <a-assets>
 
-          <img id="juego" crossOrigin="anonymous" src="./textures/scifi_sky_galaxy.jpg">
+          <img id="juego" crossOrigin="anonymous" src="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/scifi_sky_galaxy.jpg?v=1690359375046" >
+          <audio id="sound" src="https://cdn.glitch.global/2717fc24-0bc1-4aa5-8af8-e18257febe68/narracion2.mp3?v=1690429358423" ></audio>
          
         </a-assets>
 
-        <a-scene generator>
+        <a-scene generator sound="src: #sound; autoplay:true;  volume= 5">
           
           
-
+          
           <!-- el portal -->
           <a-link href="index.html" position="-0.62 2.2 -6" rotation="0 0 0" radius="0.0" scale="2 2 2" image="#juego"></a-link>
           <!-- Agregar una luz puntual -->
@@ -48,7 +49,7 @@
           scale="1.1 1.1 1.1" animation-mixer="action" play-all-model-animations modify-materials gltf-model="https://cdn.glitch.global/2341e5ca-dad5-4d0a-8dc2-847321779c09/marce.glb?v=1690375184386"></a-entity>
     
           <a-entity position="-2.5  0.75  -4" rotation=" 0 50 0"radius="0.5" height="5" 
-          scale="1.1 1.1 1.1" animation-mixer="action" play-all-model-animations modify-materials gltf-model="https://cdn.glitch.global/d9ce673a-acfa-4fbc-aace-90256a6b222a/greiskelboxingrealxmain.glb?v=1690373225245"></a-entity>
+          scale="1.1 1.1 1.1" animation-mixer="action" play-all-model-animations modify-materials gltf-model="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/avatarcalentando.glb?v=1690379293009"></a-entity>
           
           
           <a-sky src="https://cdn.glitch.global/f7352a30-480a-4fcc-a65b-044db4a839e2/scifi_sand_danger_planetas_naves_galaticas_y_pe%20(1).jpg?v=1690322748073"></a-sky>
