@@ -43,7 +43,7 @@ AFRAME.registerComponent('generator', {
     // Generar objetos de uno en uno cada 8000ms (tiempo total de la animación anterior más el tiempo de espera)
     setInterval(function () {
       createAndAnimateObject();
-    }, 4000);
+    }, 1000);
   }
 });
  
