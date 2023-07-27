@@ -9,6 +9,8 @@
     <script src="js/portal.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js%22%3E"></script>
     <script src="./js/modify.js"></script>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+
 
   </head>
 
@@ -18,23 +20,25 @@
 <body>
 
 
-  <a-scene
+  <a-scene id="soundnarracion"
   raycaster="far: 100; objects: [link];"
   cursor="rayOrigin: mouse"
   info-message="htmlSrc: #messageText"
->
+ >
+
+
   <a-assets>
     <img id="juego" crossOrigin="anonymous" src="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/scifi_sky_galaxy.jpg?v=1690359375046" >
+   
     <!-- Cargar la música de fondo y la narración -->
-    <audio id="narration" src="https://cdn.glitch.global/7cebd1cc-3e36-4bba-b121-a8d09e52f8a4/narracion2.mp3?v=1690458624124%22%3E"></audio>
+    <audio id="soundnarracion" src="https://cdn.glitch.global/7e0d6548-1faa-45cb-a209-e104c1544ad5/narracion2.mp3?v=1690486031700" autoplay></audio>
 
-
-  </a-assets>
+ </a-assets>
 
 
   <!-- el portal -->
   <a-link href="escena.html" position="-0.62 2.2 -6" rotation="0 0 0" radius="0.0" scale="2 2 2" image="#juego"></a-link>
-  <!-- Agregar una luz puntual -->
+  <!-- luz -->
   <a-entity light="type: point; intensity: 2;" position="0 3 0"></a-entity>
          
   <a-entity generator>
@@ -42,7 +46,7 @@
    
     gltf-model="https://cdn.glitch.global/2341e5ca-dad5-4d0a-8dc2-847321779c09/yenny.glb?v=1690377555585 "></a-entity>
    
-    <!-- Aquí agregamos el componente de audio para la narración -->
+    <!--  audio  -->
     <a-entity position="2 0.8 -4.8" rotation="0 -50 0" radius="1.2" height="1.5"
     scale="1.2 1.2 1.2" animation-mixer="action" play-all-model-animations modify-materials gltf-model="https://cdn.glitch.global/d9ce673a-acfa-4fbc-aace-90256a6b222a/kibriamain.glb?v=1690373808341">
     </a-entity>
@@ -59,7 +63,9 @@
          
     <a-entity camera="" position="0.00881 1.58238 1.4542" wasd-controls="" rotation="" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
          
-    <a-sky src="https://cdn.glitch.global/f7352a30-480a-4fcc-a65b-044db4a839e2/scifi_sand_danger_planetas_naves_galaticas_y_pe%20(1).jpg?v=1690322748073"></a-sky>
+
+
+    <a-sky onclick="playSound()" src="https://cdn.glitch.global/f7352a30-480a-4fcc-a65b-044db4a839e2/scifi_sand_danger_planetas_naves_galaticas_y_pe%20(1).jpg?v=1690322748073"></a-sky>
    
  
   </a-scene>

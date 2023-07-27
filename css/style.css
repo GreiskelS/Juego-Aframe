@@ -12,3 +12,7 @@ text {
     font-family: 'Righteous', cursive;
     font-family: 'Roboto Mono', monospace;
 }
+
+#action{
+    z-index: 50;
+}
