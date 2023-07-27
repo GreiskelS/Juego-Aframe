@@ -1,18 +1,20 @@
+// Script para controlar la reproducción de la narración
+document.addEventListener('DOMContentLoaded', function() {
+  // Obtener referencia al elemento de la narración
+  const narrationSound = document.getElementById('narrationSound');
 
-document.querySelector("a-scene").addEventListener("loaded", () => {
-    const backgroundSoundElement = document.querySelector("#backgroundSound");
-    const soundElement = document.querySelector("#sound");
+  // Función para reproducir la narración dos veces
+  function playNarration() {
+    narrationSound.pause(); // Pausar la narración si ya se está reproduciendo
+    narrationSound.currentTime = 0; // Reiniciar la narración al inicio
+    narrationSound.play(); // Reproducir la narración
+    setTimeout(function() {
+      narrationSound.pause(); // Pausar la narración después de la primera reproducción
+      narrationSound.currentTime = 0; // Reiniciar la narración al inicio
+      narrationSound.play(); // Reproducir la narración por segunda vez
+    }, narrationSound.duration + 500); // Esperar el tiempo de la narración más un pequeño margen de 500ms
+  }
 
-    // Reproducir el sonido de fondo con un volumen más bajo y en bucle infinito
-    backgroundSoundElement.volume = 0.5; // Ajusta el volumen del sonido de fondo según sea necesario
-    backgroundSoundElement.loop = true;
-    backgroundSoundElement.play();
-
-    // Intentar reproducir la narración
-    soundElement.volume = 1; // Ajusta el volumen de la narración según sea necesario
-    soundElement.play()
-      .catch((error) => {
-        // Manejar el error en caso de que la reproducción automática esté bloqueada por el navegador
-        console.log("Error al reproducir la narración:", error);
-      });
-  });
+  // Reproducir la narración dos veces al cargar la página
+  playNarration();
+});

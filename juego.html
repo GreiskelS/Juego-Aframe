@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script><script src="js/app.js"></script>
+    <script src="js/modify.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&family=Montserrat:ital,wght@1,300&family=Playfair+Display&family=Righteous&family=Roboto+Mono:wght@200;400&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <title>Juego Aframe</title>
+</head>
+
+<body>
+    <a-scene >
+        <a-scene renderer="antialias: true;
+                   colorManagement: true;
+                   sortObjects: true;
+                   physicallyCorrectLights: true;
+                  "></a-scene>
+        
+        <a-assets>
+            <img id="sky" src="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/scifi_sky_galaxy.jpg?v=1690359375046" id="sky">
+
+            <a-asset-item id="modelo-gltf" position="0 46000 0" src="https://cdn.glitch.global/ebd0de65-7a0c-4c3d-a550-d214da511d08/Turret%20Teleporter.glb?v=1690187026653"></a-asset-item>
+
+            <img id="suelo" src="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/suelo.jpg?v=1690359347223">
+
+           <audio id="sound" src="https://cdn.glitch.global/e576ce81-aaef-439c-852c-a07fddd0ab24/blaster-2-81267.mp3?v=1690295233292" ></audio>
+
+           <a-asset-item id="modelo-nave" src="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/SpaceShip.glb?v=1690360334665"></a-asset-item>
+    </a-assets>
+    
+    <!-- Luces -->
+    <a-entity light="type: point; intensity: 2; color: #CCC;" position="0 3 0" ></a-entity>
+
+
+    <a-entity id="Greiskel" position="3 8 -9" rotation="0 150 0" scale="1 1 1" animation-mixer="action" play-all-model-animations modify-materials gltf-model="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/greiskel.kick.glb?v=1690372746753"
+    renderer="antialias: true"></a-entity>
+    <a-entity id="Gabriela" position="14 8 -10" rotation="0 150 0"  scale="1 1 1" animation-mixer="action" play-all-model-animations modify-materials gltf-model="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/gabifightmov.glb?v=1690318944788"
+    renderer="antialias: true"></a-entity>
+    <a-entity id="Kibria" position="12 8 -15" rotation="0 150 0"  scale="1 1 1" animation-mixer="action" play-all-model-animations modify-materials gltf-model="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/kibriafightmov.glb?v=1690318950172"
+    renderer="antialias: true"></a-entity>
+    <a-entity id="Marce" position="8 8 -9" rotation="0 150 0"  scale="1 1 1" animation-mixer="action" play-all-model-animations modify-materials gltf-model="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/marcecapoeramov.glb?v=1690318955996"
+    renderer="antialias: true"></a-entity>
+    <a-entity id="Yeni" position="6 8 -12" rotation="0 150 0"  scale="1 1 1" animation-mixer="action" play-all-model-animations modify-materials gltf-model="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/yenifightmov.glb?v=1690318960049"
+    renderer="antialias: true"></a-entity>
+
+ 
+        <!-- Cielo -->
+        <a-sky src="#sky"></a-sky>
+
+        <a-entity gltf-model="#modelo-nave" position="45 20 -35" rotation="2 0 15"scale="1 1 1"></a-entity>
+
+<!-- Naves -->
+        <a-entity class="orbit" position="-20 62 -90"  rotation="0 0 0"
+            animation="property: rotation; to: 0 360 360; loop: true; dur: 14000;  easing: linear" 
+           sound="src: #sound; on: click"  volume="1" renderer="antialias: true">
+        </a-entity>
+
+        <a-entity class="orbit" position="-30 62 -60" rotation="0 0 -45"
+            animation="property: rotation; to: 0 -360 0; loop: true; dur: 13000; easing: linear" 
+            sound="src: #sound; on: click" volume="1" renderer="antialias: true">
+        </a-entity>
+
+        <a-entity class="orbit" position="30 62 -90" rotation="0 0 -90"
+            animation="property: rotation; to: 0 360 360; loop: true; dur: 12000; easing: linear"
+            sound="src: #sound; on: click"  volume="1" renderer="antialias: true">
+        </a-entity>
+
+        <a-entity class="orbit" position="-10 62 -60" rotation="0 0 -120"
+            animation="property: rotation; to: 360 -360 0; loop: true; dur: 15000; easing: linear"
+            sound="src: #sound; on: click" volume="1" renderer="antialias: true">
+        </a-entity>
+<!-- Naves -->
+        
+        <!-- camera-->
+    <a-camera camera="" look-controls="" position="10 10 -5"  data-aframe-inspector-original-camera="">
+
+        <a-text value="0 naves eliminadas" text-shadow="1 2 1 black" color="white" position="0 -0.70 -1" width="1" text-align="center" text="">
+        </a-text>
+        <a-entity cursor="fuse: true; fuseTimeout: 100" position="0 0 -2" raycaster="objects: .meteor" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat">
+        </a-entity>
+        <a-entity src="#gun" gltf-model="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/Gunver2.glb?v=1690360245692" position="0.1 -0.02 -0.50" scale="0.3 0.3 0.3" rotation="0 97 0" 
+        ></a-entity>
+    </a-camera> 
+       
+<!-- storage -->
+          
+        <a-text value="0 naves eliminadas" text-shadow="2px 2px 2px black" color="white" position="0 -0.1 -1" width="1" text-align="center">
+        </a-text>
+
+       <a-entity cursor="fuse: true; fuseTimeout: 100" position="0 0 -1" raycaster="objects: .meteor"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat"
+                >
+<!-- storage -->
+
+               <!-- Mandos -->
+                <a-entity camera position="0 1.6 0" wasd-controls look-controls>
+                    <a-text position="0 0 -5"  wrap-count="50" text-align="center"></a-text>
+                  </a-entity>
+                  <a-entity oculus-touch-controls="hand: left"
+                            collider-check raycaster="objects: .collidable; showLine: true; far: 1"></a-entity>
+                  <a-entity oculus-touch-controls="hand: right"
+                            collider-check raycaster="objects: .collidable; showLine: true; far: 1"></a-entity>
+                </a-entity>
+
+        <a-entity>
+            <!-- Geometría del Plano -->
+            <a-plane position="-4 -10 -4"  material="src: #suelo; repeat: 1 1;" rotation="-90 0 0 " geometry="primitive: plane; width: 10000; height: 10000" ></a-plane>
+        </a-entity>
+
+</a-scene>
+
+</body>
+</html>
