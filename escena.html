@@ -32,6 +32,7 @@
             <img id="suelo" src="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/suelo.jpg?v=1690359347223">
 
            <audio id="sound" src="https://cdn.glitch.global/e576ce81-aaef-439c-852c-a07fddd0ab24/blaster-2-81267.mp3?v=1690295233292" ></audio>
+           <audio id="soundscene" src="https://cdn.glitch.global/e576ce81-aaef-439c-852c-a07fddd0ab24/blaster-2-81267.mp3?v=1690295233292" ></audio>
 
            <a-asset-item id="modelo-nave" src="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/SpaceShip.glb?v=1690360334665"></a-asset-item>
     </a-assets>
@@ -62,29 +63,29 @@
         <a-entity gltf-model="#modelo-nave" position="45 20 -35" rotation="2 0 15"scale="1 1 1"></a-entity>
 
 <!-- Naves -->
-        <a-entity class="orbit" position="-20 62 -90"  rotation="0 0 0"
+        <a-entity class="orbit" id="eliminarOrbit" position="-20 62 -90"  rotation="0 0 0"
             animation="property: rotation; to: 0 360 360; loop: true; dur: 14000;  easing: linear" 
            sound="src: #sound; on: click"  volume="1" renderer="antialias: true">
         </a-entity>
 
-        <a-entity class="orbit" position="-30 62 -60" rotation="0 0 -45"
+        <a-entity class="orbit" id="eliminarOrbit" position="-30 62 -60" rotation="0 0 -45"
             animation="property: rotation; to: 0 -360 0; loop: true; dur: 13000; easing: linear" 
             sound="src: #sound; on: click" volume="1" renderer="antialias: true">
         </a-entity>
 
-        <a-entity class="orbit" position="30 62 -90" rotation="0 0 -90"
+        <a-entity class="orbit" id="eliminarOrbit" position="30 62 -90" rotation="0 0 -90"
             animation="property: rotation; to: 0 360 360; loop: true; dur: 12000; easing: linear"
             sound="src: #sound; on: click"  volume="1" renderer="antialias: true">
         </a-entity>
 
-        <a-entity class="orbit" position="-10 62 -60" rotation="0 0 -120"
+        <a-entity class="orbit" id="eliminarOrbit" position="-10 62 -60" rotation="0 0 -120"
             animation="property: rotation; to: 360 -360 0; loop: true; dur: 15000; easing: linear"
             sound="src: #sound; on:click" volume="1" renderer="antialias: true">
         </a-entity>
 <!-- Naves -->
         
         <!-- camera-->
-    <a-camera camera="" look-controls="" position="10 3 -5"  data-aframe-inspector-original-camera="">
+    <a-camera camera="" look-controls="" position="5 3 -5"  data-aframe-inspector-original-camera="">
 
         <!-- <a-text value="0 naves eliminadas" text-shadow="1 2 1 black" color="white" position="0 -0.70 -1" width="1" text-align="center" text="">
         </a-text>  -->
@@ -110,9 +111,14 @@
                     <!-- <a-text position="0 0 -5"  wrap-count="50" text-align="center"></a-text> -->
                 </a-entity>
                   <a-entity oculus-touch-controls="hand: left"
-                            collider-check raycaster="objects: .collidable; showLine: true; far: 1"></a-entity>
+                            collider-check raycaster="objects: .collidable;
+                             showLine: true; far: 1"
+                             ></a-entity>
                   <a-entity oculus-touch-controls="hand: right"
-                            collider-check raycaster="objects: .collidable; showLine: true; far: 1"></a-entity>
+                            collider-check raycaster="objects: .collidable; 
+                            showLine: true; far: 1"
+                            
+            event-set__click="_event: click; _target: #eliminarOrbit; visible: false"></a-entity>
                 </a-entity>
 
         <a-entity>
