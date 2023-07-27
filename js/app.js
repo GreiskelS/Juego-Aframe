@@ -34,7 +34,7 @@ AFRAME.registerComponent('shootable', {
     },
 });
 
-// guardarlo en el local storage
+//funcion de guardarlo en el localhost
 window.addEventListener('load', () => {
     const savedScore = localStorage.getItem('score');
     if (savedScore !== null) {
@@ -46,7 +46,7 @@ window.addEventListener('load', () => {
 });
 
 
-// meter el objeto del nave
+//funcion para que los objetos sean las naves
 function initScene() {
     let orbits = document.querySelectorAll('.orbit')
   
