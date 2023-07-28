@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,25 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/modify.js"></script>
-    <script src="js/app.js"></script>
+    <!-- <script src="./js/audio.js"></script> -->
+    <script src="./js/portal.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&family=Montserrat:ital,wght@1,300&family=Playfair+Display&family=Righteous&family=Roboto+Mono:wght@200;400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&family=Montserrat:ital,wght@1,300&family=Playfair+Display&family=Righteous&family=Roboto+Mono:wght@200;400&display=swap"
+        rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
     <title>Juego Aframe</title>
- </head>
+</head>
 
-    
 <body>
     <a-scene physics="gravity: -9.8" raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse"
         info-message="htmlSrc: #messageText" sound="src: #escena; autoplay">
+
+        <!-- <div class="button">
+            <button class="styled-button" onclick="toggleMusica()">Start</button>
+        </div> -->
 
         <a-scene renderer="antialias: true;
                    colorManagement: true;
@@ -40,17 +47,20 @@
 
             <audio id="sound"
                 src="https://cdn.glitch.global/e576ce81-aaef-439c-852c-a07fddd0ab24/blaster-2-81267.mp3?v=1690295233292"></audio>
+
             <a-asset-item id="avion1"
                 src="https://cdn.glitch.global/5bec5bde-9b42-4d8c-b78c-2e06cfd205e2/Spaceship.glb?v=1690457074177"></a-asset-item>
+
             <audio id="backgroundSound"
                 src="https://cdn.glitch.global/2717fc24-0bc1-4aa5-8af8-e18257febe68/cinematic-battle-music-star-wars-style-148641.mp3?v=1690425141524"></audio>
+
             <a-asset-item id="modelo-nave"
                 src="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/SpaceShip.glb?v=1690360334665"></a-asset-item>
         </a-assets>
 
         <a-entity sound="src: #backgroundSound; autoplay: true; loop: true; volume: 3"></a-entity>
         <div class="button">
-            <button class="backgroundSound" onclick="toggleMusica()">Start/Stop</button>
+            <button class="backgroundSound" onclick="toggleMusica()">Start</button>
         </div>
 
         <!-- Luces -->
