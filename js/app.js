@@ -25,6 +25,14 @@ AFRAME.registerComponent('shootable', {
             score++;
             document.querySelector('[text]').setAttribute('value', `${score} naves eliminadas`);
 
+
+          //   if (score >= 32) {
+          //     // Redirect to the final.html page
+          //     window.location.href = 'final.html';
+          // } else {
+            
+          // }
+
             // Remove the meteor from the scene
             this.el.parentNode.removeChild(this.el);
 
@@ -68,3 +76,17 @@ function initScene() {
       })
     })
   }
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
