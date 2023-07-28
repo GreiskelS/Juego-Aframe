@@ -1,6 +1,4 @@
 
-
-
 window.addEventListener('load', initScene, sound="src: #escena; autoplay")
 
 const meteors  = [
