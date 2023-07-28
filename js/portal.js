@@ -47,10 +47,14 @@ AFRAME.registerComponent('generator', {
   }
 });
  
-const sound = document.getElementById('#soundnarracion');
-// sonido = document.getElementById('a-scene')
-sonido.setAttribute(sound,'"src: #soundnarracion; on: click"');
+// const sound = document.getElementById('#soundnarracion');
+// // sonido = document.getElementById('a-scene')
+// sonido.setAttribute(sound,'"src: #soundnarracion; on: click"');
 
+window.addEventListener('DOMContentLoaded', () => {
+  const soundnarracion = document.getElementById('#soundnarracion');
+  soundnarracion.play();
+});
 
 // window.addEventListener('DOMContentLoaded', () => {
 //   const sound = document.getElementById('#soundnarracion');

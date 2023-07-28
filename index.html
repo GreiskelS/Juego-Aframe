@@ -20,7 +20,7 @@
 <body>
 
 
-  <a-scene id="soundnarracion"
+  <a-scene 
   raycaster="far: 100; objects: [link];"
   cursor="rayOrigin: mouse"
   info-message="htmlSrc: #messageText"
@@ -31,13 +31,13 @@
     <img id="juego" crossOrigin="anonymous" src="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/scifi_sky_galaxy.jpg?v=1690359375046" >
    
     <!-- Cargar la música de fondo y la narración -->
-    <audio id="soundnarracion" src="https://cdn.glitch.global/7e0d6548-1faa-45cb-a209-e104c1544ad5/narracion2.mp3?v=1690486031700" autoplay></audio>
+    <audio id="soundnarracion" src="https://cdn.glitch.global/7e0d6548-1faa-45cb-a209-e104c1544ad5/narracion2.mp3?v=1690486031700" autoplay loop></audio>
 
  </a-assets>
 
 
   <!-- el portal -->
-  <a-link href="escena.html" position="-0.62 2.2 -6" rotation="0 0 0" radius="0.0" scale="2 2 2" image="#juego"></a-link>
+  <a-link href="escena.html"  position="-0.62 2.2 -6" rotation="0 0 0" radius="0.0" scale="2 2 2" image="#juego"></a-link>
   <!-- luz -->
   <a-entity light="type: point; intensity: 2;" position="0 3 0"></a-entity>
          
@@ -64,8 +64,7 @@
     <a-entity camera="" position="0.00881 1.58238 1.4542" wasd-controls="" rotation="" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
          
 
-
-    <a-sky onclick="playSound()" src="https://cdn.glitch.global/f7352a30-480a-4fcc-a65b-044db4a839e2/scifi_sand_danger_planetas_naves_galaticas_y_pe%20(1).jpg?v=1690322748073"></a-sky>
+    <a-sky sound="src: #soundnarracion autoplay loop" volume="1" src="https://cdn.glitch.global/f7352a30-480a-4fcc-a65b-044db4a839e2/scifi_sand_danger_planetas_naves_galaticas_y_pe%20(1).jpg?v=1690322748073"></a-sky>
    
  
   </a-scene>
