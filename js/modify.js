@@ -29,4 +29,5 @@ AFRAME.registerComponent('play-all-model-animations', {
     }
   });
 
+
  
