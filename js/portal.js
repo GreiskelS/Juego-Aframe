@@ -43,17 +43,34 @@ AFRAME.registerComponent('generator', {
     // Generar objetos de uno en uno cada 8000ms (tiempo total de la animación anterior más el tiempo de espera)
     setInterval(function () {
       createAndAnimateObject();
-    }, 4000);
+    }, 1000);
   }
 });
  
+// const sound = document.getElementById('#soundnarracion');
+// // sonido = document.getElementById('a-scene')
+// sonido.setAttribute(sound,'"src: #soundnarracion; on: click"');
 
+window.addEventListener('DOMContentLoaded', () => {
+  const soundnarracion = document.getElementById('#soundnarracion');
+  soundnarracion.play();
+});
+
+// window.addEventListener('DOMContentLoaded', () => {
+//   const sound = document.getElementById('#soundnarracion');
+
+//   // Agregar un controlador de eventos "ended" al elemento de audio
+//   sound.addEventListener('ended', () => {
+//       // Detener el sonido y reiniciar el tiempo de reproducción al finalizar
+//       sound.pause();
+//       sound.currentTime = 0; // Reiniciar el tiempo de reproducción al principio
+//   });
+// });
   
+// window.addEventListener('DOMContentLoaded', () => {
+//   const soundnarracion = document.getElementById('soundnarracion', click);
+//   soundnarracion.play();
   
-  
-  
-  
-  
-  
+// });
   
   
