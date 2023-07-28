@@ -51,10 +51,14 @@ text {
 
   /* Estilos para el contenedor del botón */
 .button {
+  font-size: large;
+  margin-left: 50%;
+  margin-top: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
+  width: 100px;
   z-index: 100;
   position: absolute;
 }

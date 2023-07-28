@@ -19,8 +19,8 @@ AFRAME.registerComponent('shootable', {
           score++;
           document.querySelector('[text]').setAttribute('value', `${score} naves eliminadas`);
 
-          // Check if 16 naves have been eliminated
-          if (score >= 16) {
+          // Check if 20 naves have been eliminated
+          if (score >= 20) {
               // Redirect to the final.html page
               window.location.href = 'final.html';
           }
