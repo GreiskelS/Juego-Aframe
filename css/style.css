@@ -80,3 +80,34 @@ text {
 .styled-button:active {
   background-color: #1c4f82;
 }
+/* Estilos para el contenedor del botón */
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  z-index: 100;
+  position: absolute;
+}
+
+/* Estilos del botón personalizado */
+.styled-button {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos cuando el cursor pasa por encima del botón */
+.styled-button:hover {
+  background-color: #2980b9;
+}
+
+/* Estilos cuando el botón está presionado */
+.styled-button:active {
+  background-color: #1c4f82;
+}
