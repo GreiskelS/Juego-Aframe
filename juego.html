@@ -57,22 +57,22 @@
         <a-entity gltf-model="#modelo-nave" position="45 20 -35" rotation="2 0 15"scale="1 1 1"></a-entity>
 
 <!-- Naves -->
-        <a-entity class="orbit" position="-20 62 -90"  rotation="0 0 0"
+        <a-entity class="orbit"class="collidable" position="-20 62 -90"  rotation="0 0 0"
             animation="property: rotation; to: 0 360 360; loop: true; dur: 14000;  easing: linear" 
            sound="src: #sound; on: click"  volume="1" renderer="antialias: true">
         </a-entity>
 
-        <a-entity class="orbit" position="-30 62 -60" rotation="0 0 -45"
+        <a-entity class="orbit"class="collidable"  position="-30 62 -60" rotation="0 0 -45"
             animation="property: rotation; to: 0 -360 0; loop: true; dur: 13000; easing: linear" 
             sound="src: #sound; on: click" volume="1" renderer="antialias: true">
         </a-entity>
 
-        <a-entity class="orbit" position="30 62 -90" rotation="0 0 -90"
+        <a-entity class="orbit" class="collidable" position="30 62 -90" rotation="0 0 -90"
             animation="property: rotation; to: 0 360 360; loop: true; dur: 12000; easing: linear"
             sound="src: #sound; on: click"  volume="1" renderer="antialias: true">
         </a-entity>
 
-        <a-entity class="orbit" position="-10 62 -60" rotation="0 0 -120"
+        <a-entity class="orbit" class="collidable" position="-10 62 -60" rotation="0 0 -120"
             animation="property: rotation; to: 360 -360 0; loop: true; dur: 15000; easing: linear"
             sound="src: #sound; on: click" volume="1" renderer="antialias: true">
         </a-entity>
@@ -103,10 +103,10 @@
                 <a-entity camera position="0 1.6 0" wasd-controls look-controls>
                     <a-text position="0 0 -5"  wrap-count="50" text-align="center"></a-text>
                   </a-entity>
-                  <a-entity oculus-touch-controls="hand: left"
-                            collider-check raycaster="objects: .collidable; showLine: true; far: 1"></a-entity>
-                  <a-entity oculus-touch-controls="hand: right"
-                            collider-check raycaster="objects: .collidable; showLine: true; far: 1"></a-entity>
+                  <a-entity oculus-touch-controls="hand: left" raycaster="objects: .collidable; showLine: true; far: 1"
+                  collider-check="objects: .collidable"></a-entity>
+                  <a-entity oculus-touch-controls="hand: right" raycaster="objects: .collidable; showLine: true; far: 1"
+                  collider-check="objects: .collidable"></a-entity>
                 </a-entity>
 
         <a-entity>

@@ -70,3 +70,20 @@ function initScene() {
       })
     })
   }
+
+  AFRAME.registerComponent('activar-raycaster-izquierdo', {
+    init: function () {
+      this.el.addEventListener('buttondown', (event) => {
+        if (event.detail.id === 1) { // El ID 1 corresponde al botón A en el controlador izquierdo
+          this.el.setAttribute('raycaster', 'enabled', true);
+          this.el.setAttribute('collider-check', 'enabled', true);
+        }
+      });
+      this.el.addEventListener('buttonup', (event) => {
+        if (event.detail.id === 1) {
+          this.el.setAttribute('raycaster', 'enabled', false);
+          this.el.setAttribute('collider-check', 'enabled', false);
+        }
+      });
+    }
+  });
