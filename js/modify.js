@@ -34,6 +34,7 @@ AFRAME.registerComponent('play-all-model-animations', {
     }
   });
 
+
   // AFRAME.registerComponent('environment', {
   //   schema: {
   //     active: {default: false},
