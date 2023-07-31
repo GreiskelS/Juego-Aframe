@@ -17,16 +17,15 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&family=Montserrat:ital,wght@1,300&family=Playfair+Display&family=Righteous&family=Roboto+Mono:wght@200;400&display=swap"
         rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Juego Aframe</title>
 </head>
 
 <body>
-    <a-scene physics="gravity: -9.8" raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse"
-        info-message="htmlSrc: #messageText" sound="src: #escena; autoplay">
 
-        <!-- <div class="button">
-            <button class="styled-button" onclick="toggleMusica()">Start</button>
-        </div> -->
+    <a-scene id="laEscena" physics="gravity: -9.8" raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse"
+        info-message="htmlSrc: #messageText" sound="src: #escena; autoplay">
 
         <a-scene renderer="antialias: true;
                    colorManagement: true;
@@ -58,14 +57,15 @@
                 src="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/SpaceShip.glb?v=1690360334665"></a-asset-item>
         </a-assets>
 
-        <a-entity sound="src: #backgroundSound; autoplay: true; loop: true; volume: 3"></a-entity>
-        <div class="button">
-            <button class="backgroundSound" onclick="toggleMusica()">Start</button>
-        </div>
+        <a-entity sound="src: #backgroundSound; autoplay: true; loop: true; volume: 3">
+            <div class="button">
+                <button class="backgroundSound" onclick="toggleMusica()">Start</button>
+            </div>
+        </a-entity>
 
         <!-- Luces -->
-        <a-entity light="type: point; intensity: 2; color: #CCC;" position="0 3 0"></a-entity>
-
+        <a-entity light="type: point; intensity: 2; color: #CCC;" position="10 5 -5"></a-entity>
+        <!-- Avatares -->
         <a-entity id="Greiskel" position="3 1 -9" r0tation="0 150 0" scale="1 1 1" animation-mixer="action"
             play-all-model-animations modify-materials
             gltf-model="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/greiskel.kick.glb?v=1690372746753"
@@ -105,13 +105,13 @@
 
         <!-- Cielo -->
         <a-sky src="#sky"></a-sky>
-
+        <!-- nave -->
         <a-entity gltf-model="#modelo-nave" position="45 20 -35" rotation="2 0 15" scale="1 1 1"></a-entity>
-
-
+        <!-- colisión -->
         <a-entity class="collidable" id="avion" gltf-model="#avion1" position="-40 20 -50" scale="0.01 0.01 0.01"
             rotation="0 180 0" animation="property: position; to: 0 2 -30; loop: false; dur: 10000;" dynamic-body>
         </a-entity>
+
         <!-- Naves -->
         <a-entity class="orbit" event-set__enter="_event: mouseenter; color: #8FF7FF"
             event-set__leave="_event: mouseleave; color: #4CC3D9" position="-20 62 -90" rotation="0 0 0"
@@ -136,49 +136,26 @@
             animation="property: rotation; to: 360 -360 0; loop: true; dur: 15000; easing: linear"
             sound="src: #sound; on:click" volume="3" renderer="antialias: true">
         </a-entity>
-        <!-- Naves -->
 
-        <!-- camera-->
-        <a-camera camera="" look-controls="" position="10 5 -5" data-aframe-inspector-original-camera="">
+        <!-- camera y mandos-->
+        <a-camera camera="" look-controls="" position="10 5 -4" data-aframe-inspector-original-camera="">
 
             <a-text value="0 naves eliminadas" text-shadow="1 0 1 white" color="black" position="-0.1 -0.3 -0.60"
                 width="1" text-align="center" text="">
             </a-text>
-            <a-entity cursor="fuse: true; fuseTimeout: 100" position="0.020 0.05 -4" raycaster="objects: .meteor"
+            <a-entity cursor="fuse: true; fuseTimeout: 100" position="0.020 0.05 -2" raycaster="objects: .meteor"
                 geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat">
             </a-entity>
             <a-entity src="#gun"
                 gltf-model="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/Gunver2.glb?v=1690360245692"
                 position="0.1 0 -0.50" scale="0.3 0.3 0.3" rotation="0 97 0"></a-entity>
-        </a-camera>
-
-        <!-- storage -->
-        <a-text value="0 naves eliminadas" text-shadow="2px 4px 2px black" color="white" position="0 3 -1" width="1"
-            text-align="center">
-        </a-text>
-        <!-- storage -->
-
-        <!-- Mandos -->
-
-        <a-entity physics="gravity: -9.8" camera position="10 5 -5" wasd-controls look-controls>
-            <a-entity cursor="fuse: true; fuseTimeout: 100" position="0.020 0.05 -4" raycaster="objects: .meteor"
-                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat">
-                <a-entity src="#gun"
-                    gltf-model="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/Gunver2.glb?v=1690360245692"
-                    position="0.1 0 -0.50" scale="0.3 0.3 0.3" rotation="0 97 0"></a-entity>
-            </a-entity>
             <a-entity oculus-touch-controls="hand: left" collider-check
                 raycaster="objects: .collidable; showLine: true; far: 1"></a-entity>
             <a-entity oculus-touch-controls="hand: right" collider-check
                 raycaster="objects: .collidable; showLine: true; far: 1"></a-entity>
-        </a-entity>
+        </a-camera>
 
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <p>Elimina todas las naves</p>
-            </div>
-        </div>
-
+      
         <a-entity>
             <!-- Geometría del Plano -->
             <a-plane static-body position="-4 0 -4" material="src: #suelo; repeat: 1 1;" rotation="-90 0 0 "
@@ -186,6 +163,7 @@
         </a-entity>
 
     </a-scene>
+
 
 </body>
 

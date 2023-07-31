@@ -25,7 +25,7 @@ AFRAME.registerComponent('shootable', {
               window.location.href = 'final.html';
           }
 
-          // Remove scene
+          // Remove 
           this.el.parentNode.removeChild(this.el);
 
           // localStorage
@@ -34,8 +34,7 @@ AFRAME.registerComponent('shootable', {
   },
 });
 
-
-// Función naves
+// naves
 function initScene() {
     let orbits = document.querySelectorAll('.orbit');
 
@@ -61,16 +60,4 @@ window.addEventListener('load', () => {
     }
 
     initScene();
-});
-
-
-
-function showModal() {
-    var modal = document.getElementById("modal");
-    modal.style.display = "block";
-}
-
-
-window.addEventListener('load', function () {
-    showModal();
 });

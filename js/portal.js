@@ -46,8 +46,10 @@ AFRAME.registerComponent('generator', {
 });
  
 
-window.addEventListener('DOMContentLoaded', () => {
-  const soundnarracion = document.getElementById('#soundnarracion');
-  soundnarracion.play();
-});
+
+
+
+
+
+
 

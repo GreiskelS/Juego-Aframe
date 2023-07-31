@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
   <title>Final</title>
 </head>
 
 <body>
   <a-scene cursor="rayOrigin: mouse">
     <a-sky
-      src="https://cdn.discordapp.com/attachments/1096046109031419968/1134261688355541012/scifi_la_luna_y_una_victoria_1.jpg"
+      src="https://cdn.glitch.global/eb451705-57d8-44c3-9732-3f86cf48a794/scifi_la_luna_y_una_victoria_1.jpg?v=1690636026836"
       color="#ECECEC"></a-sky>
     <a-text value="¡Felicidades, has salvado la luna!" text-shadow="1 2 1 black" color="white" position="-0.6 1.9 -1"
       width="1" text-align="center" scale="2 2 5"></a-text>
@@ -18,7 +19,7 @@
     <!-- Botón -->
     <a-plane id="botonJugarOtraVez" color="#0077CC" position="0.03247 1.65 -1" scale="0.7 0.3 0.7"
       event-set__mouseenter="scale: 1.2 1.2 1" event-set__mouseleave="scale: 1 1 1">
-      <a-text id="botonJugarOtraVez" value="Jugar otra vez" align="center" color="#ECECEC" width="1.5" scale="2 2 5"
+      <a-text id="botonJugarOtraVez" value="¡Jugar otra vez!" align="center" color="#ECECEC"  width="1.5" scale="2 2 5"
         text=""></a-text>
     </a-plane>
   </a-scene>

@@ -84,3 +84,19 @@ text {
 .styled-button:active {
   background-color: #779bc0;
 }
+
+.botonJugarOtraVez {
+  text-align: center;
+  width: 200px;
+  background-color: #779bc0;
+  cursor: pointer;
+}
+
+div.modal-content {
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.313);
+  color: rgba(240, 248, 255, 0.744);
+  width: 300px;
+  text-align: center;
+  z-index: 5;
+}
