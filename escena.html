@@ -57,8 +57,8 @@
                 src="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/SpaceShip.glb?v=1690360334665"></a-asset-item>
         </a-assets>
 
-        <a-entity sound="src: #backgroundSound; autoplay: true; loop: true; volume: 3">
-            <div class="button">
+        <a-entity sound="src: #backgroundSound; autoplay: true; loop: true; volume: 2">
+            <div class="button" position="10 5 -5">
                 <button class="backgroundSound" onclick="toggleMusica()">Start</button>
             </div>
         </a-entity>
@@ -158,7 +158,7 @@
       
         <a-entity>
             <!-- Geometría del Plano -->
-            <a-plane static-body position="-4 0 -4" material="src: #suelo; repeat: 1 1;" rotation="-90 0 0 "
+            <a-plane static-body position="-4 0 -4" material="src: #suelo; repeat: 1 1;" rotation="-90 0 0"
                 geometry="primitive: plane; width: 10000; height: 10000"></a-plane>
         </a-entity>
 

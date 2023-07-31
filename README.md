@@ -22,6 +22,8 @@
   
 - GitHub 
 
+- Deploy  (https://superficial-diamond-allosaurus.glitch.me/)
+
 <h1><strong>Equipo de trabajo</strong></h1>
 <h2>Gabriela <br> Desarrolladora</h2>
 
