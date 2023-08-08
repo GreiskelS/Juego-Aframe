@@ -61,3 +61,17 @@ window.addEventListener('load', () => {
 
     initScene();
 });
+
+
+
+
+window.addEventListener('load', () => {
+    // Recuperar el puntaje desde el almacenamiento local
+    const savedScore = localStorage.getItem('score');
+    if (savedScore !== null) {
+        score = parseInt(savedScore);
+        document.querySelector('[text]').setAttribute('value', `${score} naves eliminadas`);
+    }
+
+    initScene();
+});

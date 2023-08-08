@@ -27,6 +27,9 @@
     <a-scene id="laEscena" physics="gravity: -9.8" raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse"
         info-message="htmlSrc: #messageText" sound="src: #escena; autoplay">
 
+
+       
+
         <a-scene renderer="antialias: true;
                    colorManagement: true;
                    sortObjects: true;
@@ -58,13 +61,15 @@
         </a-assets>
 
         <a-entity sound="src: #backgroundSound; autoplay: true; loop: true; volume: 2">
-            <div class="button" position="10 5 -5">
+            <div class="button" position="0 0 0">
                 <button class="backgroundSound" onclick="toggleMusica()">Start</button>
             </div>
-        </a-entity>
+         </a-entity>
+
+    
 
         <!-- Luces -->
-        <a-entity light="type: point; intensity: 2; color: #CCC;" position="10 5 -5"></a-entity>
+        <a-entity light="type: ambient; intensity: 1; color: #CCC;" position="1 5 -5"></a-entity>
         <!-- Avatares -->
         <a-entity id="Greiskel" position="3 1 -9" r0tation="0 150 0" scale="1 1 1" animation-mixer="action"
             play-all-model-animations modify-materials
@@ -138,24 +143,32 @@
         </a-entity>
 
         <!-- camera y mandos-->
-        <a-camera camera="" look-controls="" position="10 5 -4" data-aframe-inspector-original-camera="">
+        <a-camera camera="" look-controls="" position="5 5 -0.50" data-aframe-inspector-original-camera="" rotation="" wasd-controls="">
 
-            <a-text value="0 naves eliminadas" text-shadow="1 0 1 white" color="black" position="-0.1 -0.3 -0.60"
+            <a-text value="0 naves eliminadas" text-shadow="10 0 1 white" color="black" position="-0.1 -0.3 -0.60"
                 width="1" text-align="center" text="">
             </a-text>
+            <a-text value="Elimina 20 naves enemigas" color="white" position="0 -0.35 -0.60"
+            width="0.40" text-align="center" text="" text-opacity="-5">
+        </a-text>
+
             <a-entity cursor="fuse: true; fuseTimeout: 100" position="0.020 0.05 -2" raycaster="objects: .meteor"
                 geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat">
             </a-entity>
+
             <a-entity src="#gun"
                 gltf-model="https://cdn.glitch.global/ac70c1b6-0314-4b6a-b09e-49d98f4f97d7/Gunver2.glb?v=1690360245692"
                 position="0.1 0 -0.50" scale="0.3 0.3 0.3" rotation="0 97 0"></a-entity>
+
             <a-entity oculus-touch-controls="hand: left" collider-check
-                raycaster="objects: .collidable; showLine: true; far: 1"></a-entity>
+                raycaster="objects: .collidable; showLine: true; far: 1" position="1 5 -0.50"
+                triggerdown></a-entity>
             <a-entity oculus-touch-controls="hand: right" collider-check
-                raycaster="objects: .collidable; showLine: true; far: 1"></a-entity>
+                raycaster="objects: .collidable; showLine: true; far: 1" position="5 5 -0.50"
+                triggerdown></a-entity>  
         </a-camera>
 
-      
+     
         <a-entity>
             <!-- Geometría del Plano -->
             <a-plane static-body position="-4 0 -4" material="src: #suelo; repeat: 1 1;" rotation="-90 0 0"
@@ -164,7 +177,5 @@
 
     </a-scene>
 
-
 </body>
-
 </html>
