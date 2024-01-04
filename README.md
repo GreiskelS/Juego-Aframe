@@ -1,13 +1,15 @@
 # Juego-Aframe
 
-<h1>Invación a la Luna</h1>
+<h1>Invasión a la Luna</h1>
 
- <h1>Descripción</h1>
+<br>
+> Deploy - https://greiskels.github.io/Juego-Aframe/index.html
 
-<p>HistóriaEn un futuro lejano, cuando la humanidad ha colonizado el espacio y conquistado las estrellas, la Luna se erige como el último bastión de esperanza para la supervivencia de la especie. Sin embargo, envidias y deseos de dominación acechan desde los confines del universo.Un cataclismo cósmico ha desencadenado un oscuro plan: una alianza de imperios alienígenas ha decidido poner fin al frágil equilibrio que mantiene a salvo a la Tierra y su querida Luna. Para ello, han desatado una invasión implacable, desplegando flotas de naves de guerra devastadoras que avanzan hacia la órbita lunar.Ante el asedio inminente, la humanidad responde con valentía y coraje desesperado. </p>
+ <h1>Descripción (audio)*</h1>
 
-<h2></h2>
-<p></p>
+<p>História en un futuro lejano, cuando la humanidad ha colonizado el espacio y conquistado las estrellas, la Luna se erige como el último bastión de esperanza para la supervivencia de la especie. Sin embargo, envidias y deseos de dominación acechan desde los confines del universo.Un cataclismo cósmico ha desencadenado un oscuro plan: una alianza de imperios alienígenas ha decidido poner fin al frágil equilibrio que mantiene a salvo a la Tierra y su querida Luna. Para ello, han desatado una invasión implacable, desplegando flotas de naves de guerra devastadoras que avanzan hacia la órbita lunar.Ante el asedio inminente, la humanidad responde con valentía y coraje desesperado. </p>
+
+<br>
 <h1># Herramientas utilizadas</h1>
 
 - Aframe / Glitch
